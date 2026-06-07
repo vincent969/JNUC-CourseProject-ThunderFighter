@@ -1,5 +1,5 @@
 #include "Game.h"
-#include <cstdlib>   //提供srand   rand函数
+#include <cstdlib>   //提供rand函数
 #include <ctime>     //提供time函数
 #include <windows.h> //提供SetConsoleOutputCP函数
 int main()
