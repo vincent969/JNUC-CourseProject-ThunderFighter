@@ -82,7 +82,7 @@ void Game::spawnEnemies()
     if (rand() % 100 < CREATE_CHANCE)
     {
         int x = rand() % (WIDTH - CREAT_MARGIN * 2) + CREAT_MARGIN;
-        // 检查同列顶部是否已有敌人，避免同一列堆叠
+        // 检查同列顶部是否已有敌人
         for (const auto &enemy : main_enemies)
         {
             if (enemy->isAlive() && enemy->getX() == x)
@@ -127,6 +127,10 @@ void Game::updateEntities()
         for (auto &enemy : main_enemies)
             enemy->update();
     }
+    /*  // 老式迭代器写法
+for (vector<Enemy*>::iterator it = main_enemies.begin(); it != main_enemies.end(); ++it) {
+    (*it)->update();
+}*/
     for (auto &bullet : main_bullets)
     {
         bullet->update();
